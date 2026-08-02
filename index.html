@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <header>
+      <h2 class="heading">Expense Tracker</h2>
+      <p class="subheading">
+        This expense tracker logs expense and show them on the basis of day,
+        week, month and year
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <form id="expense-form">
+          <div class="amount-div" id="amount-div">
+            <label for="amount">amount</label>
+            <input type="number" id="amount" placeholder="0.00" min="0" step="0.01"/>
+          </div>
+          <!-- Selecting the category -->
+          <div class="category-list" id="category-list">
+            <label>category</label>
+            <select name="categorySelector" id="categorySelector">
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Shopping</option>
+              <option>Bills</option>
+              <option>Education</option>
+              <option>Savings</option>
+              <option>Health</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="date-div" id="date-div">
+            <label for="date">Date</label>
+            <input type="date" id="date" />
+          </div>
+          <div class="note-div" id="note-div">
+            <label for="note">Note</label>
+            <input type="text" placeholder="Add a note here" id="note" />
+          </div>
+          <button type="submit" id="Submit-expense">Add expense</button>
+        </form>
+      </section>
+      <section class="table-card">
+        <div id="table">
+          <div class="table-details">
+            <div class="table-toolbar">
+              <label>Filter</label>
+              <select id="period">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+                <option value="all">All</option>
+              </select>
+            </div>
+            <div id="table-total-amount">
+              <span class="total-card">Total</span>
+              <span class="total-amount" id="total-amount">$0.0</span>
+            </div>
+          </div>
+          <!-- To diplay Expense Data -->
+          <div class="table-data">
+            <!-- table heading -->
+            <table id="expense-table" border="1">
+              <thead class="table-head">
+                <tr>
+                  <th class="col-head-category">Category</th>
+                  <th class="col-head-note">Note</th>
+                  <th class="col-head-Date">Date</th>
+                  <th class="col-head-Amount">Amount</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <!-- this will be populated by app.js-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
